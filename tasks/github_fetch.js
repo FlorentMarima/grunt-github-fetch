@@ -91,7 +91,7 @@ module.exports = function(grunt) {
             executeCommand(removeTmpCommand);
 
             var fetchAssetCommand = "";
-            fetchAssetCommand += "curl -L https://api.github.com/repos/";
+            fetchAssetCommand += "curl -H 'Accept: application/octet-stream' -L https://api.github.com/repos/";
             fetchAssetCommand += options.owner + "/" + options.repository;
             fetchAssetCommand += "/releases/assets/" + id;
             fetchAssetCommand += (token ? ("?access_token=" + token) : '');
